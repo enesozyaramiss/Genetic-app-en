@@ -1,0 +1,9 @@
+streamlit
+pandas
+streamlit_option_menu
+google-generativeai
+reportlab
+matplotlib
+seaborn
+numpy
+Pillow
