@@ -3,119 +3,119 @@ import streamlit as st
 
 def show_documentation():
     """
-    Uygulama içinde kapsamlı dokümantasyon sayfasını gösterir.
+    Shows comprehensive documentation page within the application.
     """
-    # Ana Başlık
-    st.title("🧬 Genetik Varyant Yorumlama Uygulaması — Detaylı Kullanım Kılavuzu")
+    # Main Title
+    st.title("🧬 Genetic Variant Interpretation Application — Detailed User Guide")
     
-    # İçindekiler
-    with st.expander("📚 İçindekiler", expanded=True):
+    # Table of Contents
+    with st.expander("📚 Table of Contents", expanded=True):
         st.markdown("""
-        1. [Genel Bakış](#genel-bakis)
-        2. [Başlangıç](#baslangic)
-        3. [API Anahtarı Alma ve Kullanma](#api-anahtari)
-        4. [Dosya Hazırlığı ve Formatları](#dosya-hazirlik)
-        5. [Analiz Süreci](#analiz-sureci)
-        6. [Veri Kaynakları](#veri-kaynaklari)
-        7. [Sonuçların Yorumlanması](#sonuclarin-yorumlanmasi)
-        8. [PDF Rapor Oluşturma](#pdf-rapor)
-        9. [İstatistikler ve Grafikler](#istatistikler)
-        10. [Hata Çözümleri](#hata-cozumleri)
-        11. [Sıkça Sorulan Sorular](#sss)
-        12. [Teknik Detaylar (Geliştiriciler İçin)](#teknik-detaylar)
+        1. [Overview](#overview)
+        2. [Getting Started](#getting-started)
+        3. [Getting and Using API Key](#api-key)
+        4. [File Preparation and Formats](#file-preparation)
+        5. [Analysis Process](#analysis-process)
+        6. [Data Sources](#data-sources)
+        7. [Interpreting Results](#interpreting-results)
+        8. [PDF Report Generation](#pdf-report)
+        9. [Statistics and Charts](#statistics)
+        10. [Troubleshooting](#troubleshooting)
+        11. [Frequently Asked Questions](#faq)
+        12. [Technical Details (For Developers)](#technical-details)
         """)
 
-    # 1. Genel Bakış
-    st.header("1. 🌟 Genel Bakış", anchor="genel-bakis")
+    # 1. Overview
+    st.header("1. 🌟 Overview", anchor="overview")
     st.markdown("""
-    Bu uygulama, genetik varyantlarınızı (DNA'daki değişiklikleri) analiz ederek:
+    This application analyzes your genetic variants (DNA changes) by collecting:
     
-    - **ClinVar** veritabanından klinik önem bilgilerini
-    - **ClinGen** veritabanından gen-hastalık ilişkilerini
-    - **gnomAD** veritabanından popülasyon frekanslarını
-    - **PubMed** veritabanından ilgili bilimsel makaleleri
-    - **Google Gemini AI** ile kapsamlı klinik yorumları
+    - **Clinical significance information** from ClinVar database
+    - **Gene-disease associations** from ClinGen database
+    - **Population frequencies** from gnomAD database
+    - **Related scientific articles** from PubMed database
+    - **Comprehensive clinical interpretations** with Google Gemini AI
     
-    bir araya getirerek size detaylı bir rapor sunar.
+    and provides you with a detailed report.
     
-    ### 🎯 Kimler İçin?
-    - Genetik uzmanları ve doktorlar
-    - Araştırmacılar
-    - Biyoinformatik uzmanları
-    - Genetik test sonuçlarını anlamak isteyen bireyler
+    ### 🎯 Who Is This For?
+    - Genetic specialists and doctors
+    - Researchers
+    - Bioinformatics specialists
+    - Individuals wanting to understand genetic test results
     
-    ### ⚡ Temel Özellikler
-    - VCF/CSV formatında varyant dosyası yükleme
-    - Otomatik veritabanı eşleştirme
-    - AI destekli klinik yorumlama
-    - Profesyonel PDF rapor oluşturma
-    - İnteraktif sonuç görüntüleme
+    ### ⚡ Key Features
+    - Upload variant files in VCF/CSV format
+    - Automatic database matching
+    - AI-powered clinical interpretation
+    - Professional PDF report generation
+    - Interactive result visualization
     """)
 
-    # 2. Başlangıç
-    st.header("2. 🚀 Başlangıç", anchor="baslangic")
+    # 2. Getting Started
+    st.header("2. 🚀 Getting Started", anchor="getting-started")
     st.markdown("""
-    ### Gereksinimler
-    - Güncel bir web tarayıcı (Chrome, Firefox, Safari, Edge)
-    - İnternet bağlantısı
-    - Google Gemini API anahtarı (ücretsiz alınabilir)
+    ### Requirements
+    - A modern web browser (Chrome, Firefox, Safari, Edge)
+    - Internet connection
+    - Google Gemini API key (can be obtained for free)
     
-    ### Kullanıma Başlama
+    ### Getting Started
     
-    1. **Web uygulamasına erişin**
-       - Uygulama linki size sağlanacaktır
-       - Tarayıcınızda açmanız yeterlidir
+    1. **Access the web application**
+       - The application link will be provided to you
+       - Simply open it in your browser
     
-    2. **API anahtarınızı hazırlayın**
-       - Google AI Studio'dan ücretsiz alabilirsiniz
-       - Detaylar bir sonraki bölümde
+    2. **Prepare your API key**
+       - You can get it for free from Google AI Studio
+       - Details in the next section
     
-    3. **Varyant dosyanızı hazırlayın**
-       - VCF, VCF.GZ veya CSV formatında
-       - Detaylar "Dosya Hazırlığı" bölümünde
+    3. **Prepare your variant file**
+       - In VCF, VCF.GZ, or CSV format
+       - Details in the "File Preparation" section
     
-    ### ⚡ Hızlı Başlangıç
-    1. Uygulamayı açın
-    2. API anahtarınızı girin
-    3. Dosyanızı yükleyin
-    4. "Yorumla" butonuna tıklayın
-    5. Sonuçları inceleyin ve PDF raporu indirin
+    ### ⚡ Quick Start
+    1. Open the application
+    2. Enter your API key
+    3. Upload your file
+    4. Click "Interpret" button
+    5. Review results and download PDF report
     
-    💡 **Not:** Kurulum gerektirmez, tamamen web tabanlıdır!
+    💡 **Note:** No installation required, completely web-based!
     """)
 
-    # 3. API Anahtarı
-    st.header("3. 🔑 API Anahtarı Alma ve Kullanma", anchor="api-anahtari")
+    # 3. API Key
+    st.header("3. 🔑 Getting and Using API Key", anchor="api-key")
     st.markdown("""
-    ### Google Gemini API Anahtarı Alma
+    ### Getting Google Gemini API Key
     
-    1. **Google AI Studio'ya gidin:** [https://aistudio.google.com/](https://aistudio.google.com/)
+    1. **Go to Google AI Studio:** [https://aistudio.google.com/](https://aistudio.google.com/)
     
-    2. **Google hesabınızla giriş yapın**
+    2. **Sign in with your Google account**
     
-    3. **"Get API Key" butonuna tıklayın**
+    3. **Click "Get API Key" button**
     
-    4. **Yeni bir proje oluşturun veya mevcut projeyi seçin**
+    4. **Create a new project or select existing project**
     
-    5. **API anahtarınızı kopyalayın**
+    5. **Copy your API key**
     
-    ### Uygulamada Kullanma
+    ### Using in the Application
     
-    1. Sol menüdeki **"Uygulama"** sekmesinde olduğunuzdan emin olun
+    1. Make sure you're on the **"Application"** tab in the left menu
     
-    2. **"Gemini API Key'iniz"** alanına anahtarınızı yapıştırın
+    2. Paste your key in the **"Your Gemini API Key"** field
     
-    3. Anahtar doğrulandıktan sonra dosya yükleme alanı aktif olacak
+    3. After key validation, file upload area will become active
     
-    ⚠️ **Güvenlik Notu:** API anahtarınızı kimseyle paylaşmayın. Ücretsiz plan günlük 60 istek hakkı verir.
+    ⚠️ **Security Note:** Don't share your API key with anyone. Free plan provides 60 requests per day.
     """)
 
-    # 4. Dosya Hazırlığı
-    st.header("4. 📁 Dosya Hazırlığı ve Formatları", anchor="dosya-hazirlik")
+    # 4. File Preparation
+    st.header("4. 📁 File Preparation and Formats", anchor="file-preparation")
     st.markdown("""
-    ### Desteklenen Formatlar
+    ### Supported Formats
     
-    #### 1. VCF Format (.vcf veya .vcf.gz)
+    #### 1. VCF Format (.vcf or .vcf.gz)
     ```
     ##fileformat=VCFv4.2
     #CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO
@@ -124,7 +124,7 @@ def show_documentation():
     ```
     
     #### 2. CSV Format (.csv)
-    En az şu 4 sütun olmalıdır:
+    Must have at least these 4 columns:
     ```csv
     CHROM,POS,REF,ALT
     1,14370,G,A
@@ -132,372 +132,372 @@ def show_documentation():
     2,234567,C,T
     ```
     
-    ### Örnek Veri Hazırlama
+    ### Sample Data Preparation
     
-    **Excel'den CSV'ye dönüştürme:**
-    1. Excel'de varyant verilerinizi hazırlayın
-    2. Dosya → Farklı Kaydet → CSV UTF-8 seçin
-    3. Sütun başlıklarının doğru olduğundan emin olun
+    **Converting from Excel to CSV:**
+    1. Prepare your variant data in Excel
+    2. File → Save As → Select CSV UTF-8
+    3. Ensure column headers are correct
     
-    **VCF dosyası sıkıştırma:**
+    **Compressing VCF file:**
     ```bash
-    gzip varyantlar.vcf
-    # varyantlar.vcf.gz oluşacak
+    gzip variants.vcf
+    # This will create variants.vcf.gz
     ```
     
-    ### ⚠️ Önemli Notlar
-    - Kromozom değerleri: 1-22, X, Y veya chr1-chr22, chrX, chrY
-    - Pozisyon değerleri sayısal olmalı
-    - REF ve ALT değerleri A, C, G, T harflerinden oluşmalı
-    - Maksimum dosya boyutu: 200MB
+    ### ⚠️ Important Notes
+    - Chromosome values: 1-22, X, Y or chr1-chr22, chrX, chrY
+    - Position values must be numeric
+    - REF and ALT values must consist of A, C, G, T letters
+    - Maximum file size: 200MB
     """)
 
-    # 5. Analiz Süreci
-    st.header("5. 🔬 Analiz Süreci", anchor="analiz-sureci")
+    # 5. Analysis Process
+    st.header("5. 🔬 Analysis Process", anchor="analysis-process")
     st.markdown("""
-    ### Adım Adım Analiz
+    ### Step-by-Step Analysis
     
-    #### 1️⃣ Dosya Yükleme
-    - "Dosya yükle" butonuna tıklayın
-    - VCF, VCF.GZ veya CSV dosyanızı seçin
-    - Dosya otomatik olarak okunup doğrulanacak
+    #### 1️⃣ File Upload
+    - Click "Upload file" button
+    - Select your VCF, VCF.GZ, or CSV file
+    - File will be automatically read and validated
     
-    #### 2️⃣ Varyant Eşleştirme
-    Sistem şu işlemleri yapar:
-    - Yüklenen varyantları ClinVar veritabanıyla karşılaştırır
-    - CHROM, POS, REF, ALT değerlerini eşleştirir
-    - Eşleşen varyantlar için klinik bilgileri getirir
+    #### 2️⃣ Variant Matching
+    The system performs these operations:
+    - Compares uploaded variants with ClinVar database
+    - Matches CHROM, POS, REF, ALT values
+    - Retrieves clinical information for matching variants
     
-    #### 3️⃣ Veri Zenginleştirme
-    Her eşleşen varyant için:
-    - **ClinVar'dan:** Klinik önem, hastalık ilişkisi, gen adı
-    - **ClinGen'den:** Gen-hastalık geçerlilik sınıflandırması
-    - **gnomAD'dan:** Popülasyon frekansları, allel sayıları
-    - **PubMed'den:** İlgili bilimsel makale bağlantıları
+    #### 3️⃣ Data Enrichment
+    For each matching variant:
+    - **From ClinVar:** Clinical significance, disease association, gene name
+    - **From ClinGen:** Gene-disease validity classification
+    - **From gnomAD:** Population frequencies, allele counts
+    - **From PubMed:** Related scientific article links
     
-    #### 4️⃣ AI Yorumlama
-    Google Gemini her varyant için:
-    1. Patojenik olma olasılığını değerlendirir
-    2. Bilinen hastalık ilişkilerini açıklar
-    3. Klinik önemini yorumlar
-    4. Anlaşılır bir özet sunar
+    #### 4️⃣ AI Interpretation
+    Google Gemini evaluates each variant for:
+    1. Pathogenicity probability
+    2. Known disease associations
+    3. Clinical significance interpretation
+    4. Understandable summary
     
-    #### 5️⃣ Sonuç Gösterimi
-    - İnteraktif tablo
-    - Sıralanabilir sütunlar
-    - Detaylı bilgi görüntüleme
-    - CSV/PDF dışa aktarma
+    #### 5️⃣ Result Display
+    - Interactive table
+    - Sortable columns
+    - Detailed information display
+    - CSV/PDF export
     """)
 
-    # 6. Veri Kaynakları
-    st.header("6. 📊 Veri Kaynakları", anchor="veri-kaynaklari")
+    # 6. Data Sources
+    st.header("6. 📊 Data Sources", anchor="data-sources")
     st.markdown("""
     ### ClinVar
-    - **Ne:** NCBI'nin genetik varyant veritabanı
-    - **İçerik:** 1+ milyon varyant, klinik önem bilgileri
-    - **Güncelleme:** Aylık
+    - **What:** NCBI's genetic variant database
+    - **Content:** 1+ million variants, clinical significance information
+    - **Updates:** Monthly
     
-    #### Alınan Bilgiler:
-    - `CLNSIG`: Klinik önem (Pathogenic, Benign, vb.)
-    - `GENE`: İlgili gen adı
-    - `DISEASE`: İlişkili hastalıklar
-    - `CLNREVSTAT`: İnceleme durumu
+    #### Retrieved Information:
+    - `CLNSIG`: Clinical significance (Pathogenic, Benign, etc.)
+    - `GENE`: Associated gene name
+    - `DISEASE`: Associated diseases
+    - `CLNREVSTAT`: Review status
     
     ### ClinGen
-    - **Ne:** Klinik genom kaynağı
-    - **İçerik:** Gen-hastalık ilişki geçerlilikleri
-    - **Sınıflandırmalar:** Definitive, Strong, Moderate, Limited, No Evidence
+    - **What:** Clinical genome resource
+    - **Content:** Gene-disease relationship validities
+    - **Classifications:** Definitive, Strong, Moderate, Limited, No Evidence
     
     ### gnomAD
-    - **Ne:** Genom toplama veritabanı
-    - **İçerik:** 141,456 kişinin genom verisi
-    - **Veriler:**
-      - Allel frekansları
-      - Popülasyon dağılımları
-      - Filtreleme durumları
+    - **What:** Genome aggregation database
+    - **Content:** Genomic data from 141,456 individuals
+    - **Data:**
+      - Allele frequencies
+      - Population distributions
+      - Filter status
     
     ### PubMed
-    - **Ne:** Biyomedikal literatür veritabanı
-    - **İçerik:** 35+ milyon makale
-    - **Kullanım:** Varyantla ilgili yayınlara bağlantılar
+    - **What:** Biomedical literature database
+    - **Content:** 35+ million articles
+    - **Usage:** Links to variant-related publications
     """)
 
-    # 7. Sonuçların Yorumlanması
-    st.header("7. 📈 Sonuçların Yorumlanması", anchor="sonuclarin-yorumlanmasi")
+    # 7. Interpreting Results
+    st.header("7. 📈 Interpreting Results", anchor="interpreting-results")
     st.markdown("""
-    ### Klinik Önem Kategorileri
+    ### Clinical Significance Categories
     
-    #### 🔴 Pathogenic (Patojenik)
-    - Hastalığa neden olduğu kanıtlanmış
-    - Klinik takip gerektirir
-    - Aile taraması önerilir
+    #### 🔴 Pathogenic
+    - Proven to cause disease
+    - Requires clinical follow-up
+    - Family screening recommended
     
-    #### 🟠 Likely Pathogenic (Muhtemel Patojenik)
-    - %90+ olasılıkla hastalık nedeni
-    - Patojenik gibi değerlendirilir
+    #### 🟠 Likely Pathogenic
+    - 90%+ probability of causing disease
+    - Treated like pathogenic
     
-    #### 🟡 Uncertain Significance (Belirsiz Önem)
-    - Yeterli kanıt yok
-    - Takip ve yeniden değerlendirme gerekir
+    #### 🟡 Uncertain Significance
+    - Insufficient evidence
+    - Requires follow-up and re-evaluation
     
-    #### 🟢 Likely Benign (Muhtemel İyi Huylu)
-    - %90+ olasılıkla zararsız
+    #### 🟢 Likely Benign
+    - 90%+ probability of being harmless
     
-    #### ⚪ Benign (İyi Huylu)
-    - Hastalık riski yok
-    - Normal varyasyon
+    #### ⚪ Benign
+    - No disease risk
+    - Normal variation
     
-    ### Popülasyon Frekansı Değerlendirmesi
+    ### Population Frequency Assessment
     
-    | Frekans | Yorum |
-    |---------|--------|
-    | < 0.0001 | Çok nadir |
-    | 0.0001-0.001 | Nadir |
-    | 0.001-0.01 | Az yaygın |
-    | 0.01-0.05 | Yaygın |
-    | > 0.05 | Çok yaygın |
+    | Frequency | Interpretation |
+    |-----------|----------------|
+    | < 0.0001 | Very rare |
+    | 0.0001-0.001 | Rare |
+    | 0.001-0.01 | Uncommon |
+    | 0.01-0.05 | Common |
+    | > 0.05 | Very common |
     
-    ### AI Yorumlarını Anlama
+    ### Understanding AI Interpretations
     
-    Gemini yorumları 4 ana başlıkta toplanır:
-    1. **Patojenik olasılık:** Hastalık yapma potansiyeli
-    2. **Hastalık ilişkisi:** Bilinen hastalıklarla bağlantı
-    3. **Klinik önem:** Tıbbi açıdan önemi
-    4. **Özet:** Sade dilde açıklama
+    Gemini interpretations are organized into 4 main sections:
+    1. **Pathogenic probability:** Disease-causing potential
+    2. **Disease association:** Connection to known diseases
+    3. **Clinical significance:** Medical importance
+    4. **Summary:** Plain language explanation
     """)
 
-    # 8. PDF Rapor
-    st.header("8. 📄 PDF Rapor Oluşturma", anchor="pdf-rapor")
+    # 8. PDF Report
+    st.header("8. 📄 PDF Report Generation", anchor="pdf-report")
     st.markdown("""
-    ### PDF Rapor İçeriği
+    ### PDF Report Content
     
-    1. **Kapak Sayfası**
-       - Başlık ve tarih
-       - Hasta bilgileri
-       - Özet istatistikler
+    1. **Cover Page**
+       - Title and date
+       - Patient information
+       - Summary statistics
     
-    2. **Analiz Özeti**
-       - Klinik önem dağılımı (pasta grafik)
-       - Kromozom dağılımı (çubuk grafik)
-       - Allel frekans histogramı
-       - En sık görülen genler
+    2. **Analysis Summary**
+       - Clinical significance distribution (pie chart)
+       - Chromosome distribution (bar chart)
+       - Allele frequency histogram
+       - Most common genes
     
-    3. **Klinik Önem Analizi**
-       - Yüksek risk varyantları
-       - Düşük risk varyantları
-       - Belirsiz varyantlar
+    3. **Clinical Significance Analysis**
+       - High-risk variants
+       - Low-risk variants
+       - Uncertain variants
     
-    4. **Detaylı Varyant Listesi**
-       - İlk 15-20 varyantın tablosu
-       - Kromozom, pozisyon, genler
-       - Klinik önem bilgileri
+    4. **Detailed Variant List**
+       - Table of first 15-20 variants
+       - Chromosome, position, genes
+       - Clinical significance information
     
-    5. **AI Yorumları**
-       - Her varyant için detaylı açıklama
-       - Klinik öneriler
+    5. **AI Interpretations**
+       - Detailed explanation for each variant
+       - Clinical recommendations
                 
-    6. **Sonuç ve Öneriler**
-       - Genel değerlendirme
-       - Takip önerileri
+    6. **Conclusions and Recommendations**
+       - Overall assessment
+       - Follow-up recommendations
     
-    ### PDF Oluşturma Adımları
+    ### PDF Generation Steps
     
-    1. Analiz tamamlandıktan sonra **"PDF Rapor"** sekmesine gidin
-    2. Hasta bilgilerini doldurun:
-       - Hasta ID (otomatik oluşturulur)
-       - Hasta Adı
-       - Yaş
-       - Test Tarihi
-    3. **"PDF Raporu Oluştur"** butonuna tıklayın
-    4. Oluşan raporu **"PDF Raporu İndir"** ile kaydedin
+    1. After analysis is complete, go to **"PDF Report"** tab
+    2. Fill in patient information:
+       - Patient ID (auto-generated)
+       - Patient Name
+       - Age
+       - Test Date
+    3. Click **"Generate PDF Report"** button
+    4. Download the generated report with **"Download PDF Report"**
     
     """)
 
-    # 9. İstatistikler
-    st.header("9. 📊 İstatistikler ve Grafikler", anchor="istatistikler")
+    # 9. Statistics
+    st.header("9. 📊 Statistics and Charts", anchor="statistics")
     st.markdown("""
-    ### Görüntülenen İstatistikler
+    ### Displayed Statistics
     
-    #### Özet Metrikler
-    - **Toplam Varyant:** Analiz edilen varyant sayısı
-    - **Pathogenic:** Hastalık yapan varyantlar
-    - **Benign:** Zararsız varyantlar
-    - **Uncertain:** Belirsiz varyantlar
+    #### Summary Metrics
+    - **Total Variants:** Number of analyzed variants
+    - **Pathogenic:** Disease-causing variants
+    - **Benign:** Harmless variants
+    - **Uncertain:** Uncertain variants
     
-    #### Grafikler
+    #### Charts
     
-    1. **Klinik Önem Dağılımı**
-       - Pasta grafik
-       - Yüzdelik dağılım
-       - Renk kodlu kategoriler
+    1. **Clinical Significance Distribution**
+       - Pie chart
+       - Percentage distribution
+       - Color-coded categories
     
-    2. **Kromozom Dağılımı**
-       - Çubuk grafik
-       - En çok varyant içeren kromozomlar
-       - Sayısal dağılım
+    2. **Chromosome Distribution**
+       - Bar chart
+       - Chromosomes with most variants
+       - Numerical distribution
     
-    3. **Allel Frekans Histogramı**
-       - Nadir vs yaygın varyantlar
-       - Popülasyon dağılımı
-       - Log ölçekli görünüm
+    3. **Allele Frequency Histogram**
+       - Rare vs common variants
+       - Population distribution
+       - Log-scale view
     
-    4. **Gen Bazlı Dağılım**
-       - En sık etkilenen genler
-       - Varyant sayıları
-       - Top 10 gen listesi
+    4. **Gene-based Distribution**
+       - Most frequently affected genes
+       - Variant counts
+       - Top 10 gene list
     """)
 
-    # 10. Hata Çözümleri
-    st.header("10. 🛠️ Hata Çözümleri", anchor="hata-cozumleri")
+    # 10. Troubleshooting
+    st.header("10. 🛠️ Troubleshooting", anchor="troubleshooting")
     st.markdown("""
-    ### Sık Karşılaşılan Hatalar
+    ### Common Errors
     
-    #### 1. "API anahtarı geçersiz"
-    - **Sebep:** Yanlış veya eksik API anahtarı
-    - **Çözüm:** Google AI Studio'dan yeni anahtar alın
+    #### 1. "Invalid API key"
+    - **Cause:** Wrong or missing API key
+    - **Solution:** Get a new key from Google AI Studio
     
-    #### 2. "Dosya formatı desteklenmiyor"
-    - **Sebep:** Yanlış dosya uzantısı veya format
-    - **Çözüm:** VCF, VCF.GZ veya CSV formatında kaydedin
+    #### 2. "File format not supported"
+    - **Cause:** Wrong file extension or format
+    - **Solution:** Save in VCF, VCF.GZ, or CSV format
     
-    #### 3. "Gerekli sütunlar eksik"
-    - **Sebep:** CHROM, POS, REF, ALT sütunları yok
-    - **Çözüm:** Dosyanızı kontrol edip eksik sütunları ekleyin
+    #### 3. "Required columns missing"
+    - **Cause:** Missing CHROM, POS, REF, ALT columns
+    - **Solution:** Check your file and add missing columns
     
-    #### 4. "Eşleşen varyant bulunamadı"
-    - **Sebep:** Varyantlar ClinVar'da yok
-    - **Çözüm:** 
-      - Referans genom versiyonunu kontrol edin (GRCh37/38)
-      - Kromozom formatını kontrol edin (1 vs chr1)
+    #### 4. "No matching variants found"
+    - **Cause:** Variants not in ClinVar
+    - **Solution:** 
+      - Check reference genome version (GRCh37/38)
+      - Check chromosome format (1 vs chr1)
     
-    #### 5. "gnomAD verisi alınamadı"
-    - **Sebep:** API bağlantı hatası veya varyant yok
-    - **Çözüm:** İnternet bağlantınızı kontrol edin
+    #### 5. "Cannot retrieve gnomAD data"
+    - **Cause:** API connection error or variant not found
+    - **Solution:** Check your internet connection
     
-    #### 6. "PDF oluşturulamadı"
-    - **Sebep:** Bellek yetersizliği veya çok fazla varyant
-    - **Çözüm:** Daha az varyantla deneyin veya özet rapor seçin
+    #### 6. "Cannot generate PDF"
+    - **Cause:** Memory shortage or too many variants
+    - **Solution:** Try with fewer variants or select summary report
     
-    ### Performans İyileştirme
+    ### Performance Improvement
     
-    - **Yavaş analiz:** Varyant sayısını azaltın (max 100-200)
-    - **Bellek hatası:** Büyük dosyaları parçalara bölün
-    - **API limiti:** Ücretsiz planda günlük 60 istek sınırı
+    - **Slow analysis:** Reduce number of variants (max 100-200)
+    - **Memory error:** Split large files into chunks
+    - **API limit:** Free plan has 60 requests per day limit
     """)
 
-    # 10. Teknik Detaylar (Geliştiriciler İçin)
-    st.header("10. 🔧 Teknik Detaylar (Geliştiriciler İçin)", anchor="teknik-detaylar")
+    # 10. Technical Details (For Developers)
+    st.header("10. 🔧 Technical Details (For Developers)", anchor="technical-details")
     st.markdown("""
-    ### Sistem Mimarisi
+    ### System Architecture
     
-    #### Ana Bileşenler
-    1. **app.py** - Ana Streamlit uygulaması
-    2. **clinvar_parser.py** - ClinVar veri işleme
-    3. **gemini_handler.py** - Google Gemini AI entegrasyonu
-    4. **gnomad_handler.py** - gnomAD API bağlantısı (GraphQL)
-    5. **pubmed_handler.py** - PubMed veri çekme
-    6. **clingen_handler.py** - ClinGen veri işleme
-    7. **pdf_report_generator.py** - PDF rapor oluşturma
-    8. **docs.py** - Bu dokümantasyon sayfası
+    #### Main Components
+    1. **app.py** - Main Streamlit application
+    2. **clinvar_parser.py** - ClinVar data processing
+    3. **gemini_handler.py** - Google Gemini AI integration
+    4. **gnomad_handler.py** - gnomAD API connection (GraphQL)
+    5. **pubmed_handler.py** - PubMed data fetching
+    6. **clingen_handler.py** - ClinGen data processing
+    7. **pdf_report_generator.py** - PDF report generation
+    8. **docs.py** - This documentation page
     
-    #### Veri Akışı
+    #### Data Flow
     ```
-    Kullanıcı Dosyası → VCF/CSV Parser → ClinVar Eşleştirme
-                                            ↓
-    PDF Rapor ← AI Yorumlama ← Veri Zenginleştirme
+    User File → VCF/CSV Parser → ClinVar Matching
+                                    ↓
+    PDF Report ← AI Interpretation ← Data Enrichment
                                     ↓
                             gnomAD + PubMed + ClinGen
     ```
     
-    #### Kullanılan Teknolojiler
+    #### Technologies Used
     - **Frontend:** Streamlit
-    - **Veri İşleme:** Pandas, NumPy
-    - **Görselleştirme:** Matplotlib
+    - **Data Processing:** Pandas, NumPy
+    - **Visualization:** Matplotlib
     - **PDF:** ReportLab
     - **AI:** Google Generative AI (Gemini 1.5 Flash)
-    - **API'ler:** GraphQL (gnomAD), REST (NCBI E-utilities)
+    - **APIs:** GraphQL (gnomAD), REST (NCBI E-utilities)
     
-    #### Geliştirici Kurulumu
-    Eğer kodu yerel olarak çalıştırmak isterseniz:
+    #### Developer Setup
+    If you want to run the code locally:
     ```bash
-    # Gereksinimler
+    # Requirements
     pip install streamlit pandas numpy matplotlib reportlab 
     pip install google-generativeai requests streamlit-option-menu
     
-    # Çalıştırma
+    # Running
     streamlit run app.py
     ```
     
-    #### Veri Dosyaları
-    - `sampled_100.parquet` - ClinVar örnek verisi
-    - `Clingen-Gene-Disease-Summary-2025-07-01.csv` - ClinGen verisi
+    #### Data Files
+    - `sampled_100.parquet` - ClinVar sample data
+    - `Clingen-Gene-Disease-Summary-2025-07-01.csv` - ClinGen data
     
-    #### Güvenlik Önlemleri
-    - API anahtarları session state'de saklanır
-    - Dosyalar geçici bellekte işlenir
-    - SSL/TLS üzerinden API iletişimi
-    - Hasta isimleri harici API'lere gönderilmez
+    #### Security Measures
+    - API keys stored in session state
+    - Files processed in temporary memory
+    - SSL/TLS API communication
+    - Patient names not sent to external APIs
     
-    #### Cache Mekanizması
-    - gnomAD ve PubMed sorguları 24 saat cache'lenir
-    - Tekrarlayan sorgular için performans artışı sağlar
+    #### Cache Mechanism
+    - gnomAD and PubMed queries cached for 24 hours
+    - Performance boost for repeated queries
     """)
 
-    # 11. Sıkça Sorulan Sorular
-    st.header("11. ❓ Sıkça Sorulan Sorular", anchor="sss")
+    # 11. Frequently Asked Questions
+    st.header("11. ❓ Frequently Asked Questions", anchor="faq")
     st.markdown("""
-    **S: Ücretsiz mi?**
-    C: Uygulama ücretsizdir, ancak Google Gemini API'si için ücretsiz plan limitleri vardır (günlük 60 istek).
+    **Q: Is it free?**
+    A: The application is free, but Google Gemini API has free plan limits (60 requests per day).
     
-    **S: Kurulum gerekiyor mu?**
-    C: Hayır! Tamamen web tabanlıdır. Sadece tarayıcınızdan erişip kullanabilirsiniz.
+    **Q: Does it require installation?**
+    A: No! It's completely web-based. You can access and use it just from your browser.
     
-    **S: Hangi tarayıcıları destekliyor?**
-    C: Chrome, Firefox, Safari, Edge gibi güncel tüm tarayıcılar desteklenir.
+    **Q: Which browsers does it support?**
+    A: All modern browsers like Chrome, Firefox, Safari, Edge are supported.
     
-    **S: Hangi referans genom versiyonunu kullanıyor?**
-    C: Varsayılan olarak GRCh38 (hg38) kullanılır.
+    **Q: Which reference genome version does it use?**
+    A: GRCh38 (hg38) is used by default.
     
-    **S: Kaç varyant analiz edebilirim?**
-    C: Teknik olarak sınır yok, ancak performans için 100-200 varyant önerilir.
+    **Q: How many variants can I analyze?**
+    A: Technically no limit, but 100-200 variants are recommended for performance.
     
-    **S: Sonuçlar ne kadar güvenilir?**
-    C: Sonuçlar güncel veritabanlarına dayanır ancak kesin tanı için değildir. Mutlaka uzman görüşü alın.
+    **Q: How reliable are the results?**
+    A: Results are based on current databases but are not for definitive diagnosis. Always consult with an expert.
     
-    **S: Verilerim güvende mi?**
-    C: Veriler sadece analiz süresince bellekte tutulur. Hasta isimleri harici API'lere gönderilmez.
+    **Q: Are my data safe?**
+    A: Data is kept in memory only during analysis. Patient names are not sent to external APIs.
     
-    **S: Hangi hastalıklar tespit edilebilir?**
-    C: ClinVar'da kayıtlı tüm genetik hastalıklar. Özellikle tek gen hastalıkları.
+    **Q: Which diseases can be detected?**
+    A: All genetic diseases recorded in ClinVar. Especially single-gene diseases.
     
-    **S: WGS/WES verisi kullanabilir miyim?**
-    C: Evet, ancak önce varyantları filtreleyip VCF/CSV formatına dönüştürmelisiniz.
+    **Q: Can I use WGS/WES data?**
+    A: Yes, but you need to filter variants first and convert to VCF/CSV format.
     
-    **S: Mobil cihazlardan kullanabilir miyim?**
-    C: Evet, ancak büyük ekranlı cihazlarda (tablet, bilgisayar) daha iyi deneyim sunar.
+    **Q: Can I use it on mobile devices?**
+    A: Yes, but it offers better experience on larger screens (tablets, computers).
     
-    **S: Offline çalışır mı?**
-    C: Hayır, veritabanı sorguları ve AI yorumları için internet gereklidir.
+    **Q: Does it work offline?**
+    A: No, internet is required for database queries and AI interpretations.
     """)
 
-    # İletişim
-    st.header("📧 İletişim ve Destek")
+    # Contact
+    st.header("📧 Contact and Support")
     st.markdown("""
-    ### Geliştirici Bilgileri
-    - **E-posta:** enesozyaramiss@gmail.com
-    - **Proje Güncellemeleri:** GitHub üzerinden takip edilebilir
+    ### Developer Information
+    - **Email:** enesozyaramiss@gmail.com
+    - **Project Updates:** Can be followed on GitHub
     
-    ### Katkıda Bulunma
-    - Hata bildirimleri için issue açın
-    - Yeni özellik önerileri hoş karşılanır
-    - Dokümantasyon iyileştirmeleri için PR gönderin
+    ### Contributing
+    - Open issues for bug reports
+    - Feature suggestions are welcome
+    - Send PRs for documentation improvements
     
-    ### Teşekkürler
-    Bu uygulama açık kaynak topluluğu ve bilimsel veritabanları sayesinde mümkün olmuştur.
+    ### Acknowledgments
+    This application was made possible thanks to the open source community and scientific databases.
     
     ---
-    *Son güncelleme: Temmuz 2025*
+    *Last updated: July 2025*
     """)
 
-    # Sayfa sonu
+    # End of page
     st.stop()

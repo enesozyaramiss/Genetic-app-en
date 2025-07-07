@@ -329,11 +329,20 @@ class GeneticReportGenerator:
         
         story.append(PageBreak())
         
-        # AI comments - only if available
-        if report_options.get('include_detailed_analysis', True) and 'Gemini_Comment' in results_df.columns:
+        # AI comments - check for both possible column names
+        ai_comment_column = None
+        if 'Gemini_Interpretation' in results_df.columns:
+            ai_comment_column = 'Gemini_Interpretation'
+        elif 'Gemini_Comment' in results_df.columns:
+            ai_comment_column = 'Gemini_Comment'
+        elif 'AI_Comment' in results_df.columns:
+            ai_comment_column = 'AI_Comment'
+        elif 'Comment' in results_df.columns:
+            ai_comment_column = 'Comment'
+        
+        if report_options.get('include_detailed_analysis', True) and ai_comment_column:
             story.append(Paragraph("AI Comments", self.subtitle_style))
             
-            comment_limit = len(results_df)
             for idx, (_, row) in enumerate(results_df.iterrows(), 1):
                 # Variant title
                 variant_info = f"Variant {idx}: {row.get('CHROM', 'N/A')}:{row.get('POS', 'N/A')} {row.get('REF', 'N/A')}>{row.get('ALT', 'N/A')}"
@@ -343,16 +352,16 @@ class GeneticReportGenerator:
                 story.append(Paragraph(variant_info, self.subtitle_style))
                 
                 # Comment text
-                comment_text = str(row.get('Gemini_Comment', 'Comment not found'))
+                comment_text = str(row.get(ai_comment_column, 'Comment not found'))
                 # Truncate very long comments
-                if len(comment_text) > 2000:  # Limit reduced
+                if len(comment_text) > 2000:
                     comment_text = comment_text[:2000] + "... (Comment truncated)"
                 
                 story.append(Paragraph(comment_text, self.comment_style))
-                story.append(Spacer(1, 12))  # Reduced
+                story.append(Spacer(1, 12))
         
         # Add page break only if comments exist
-        if report_options.get('include_detailed_analysis', True) and 'Gemini_Comment' in results_df.columns:
+        if report_options.get('include_detailed_analysis', True) and ai_comment_column:
             story.append(PageBreak())
         
         # Conclusion and recommendations
